@@ -1,0 +1,40 @@
+{
+    "type": "record",
+    "name": "com.startup.predict.GenericPrediction",
+    "doc": "prediction",
+    "fields": [
+        {
+            "name": "predictor",
+            "type": "com.startup.predict.Predictor"
+        },
+        {
+            "name": "id",
+            "type": "long",
+            "doc": "Unique ID or Primary Key of TLE associated with prediction, e.g. message ID associated with a message."
+        },
+        {
+            "name": "value",
+            "type": "string",
+            "doc": "predicted value, e.g. label, vector, real-valued scalar"
+        },
+        {
+            "name": "likelihood",
+            "type": [
+                "null",
+                "double"
+            ],
+            "doc": "Likelihood of outcome"
+        },
+        {
+            "name": "reason_codes",
+            "doc": "Reason Code Map, <featureName,score>",
+            "type": [
+                "null",
+                {
+                    "type": "map",
+                    "values": "double"
+                }
+            ]
+        }
+    ]
+}

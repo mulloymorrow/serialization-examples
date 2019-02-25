@@ -1,0 +1,19 @@
+{
+    "type": "record",
+    "name": "com.startup.predict.GenericPredictionEvent",
+    "doc": "Emitted when a prediction is created.",
+    "fields": [
+        {
+            "name": "header",
+            "type": "com.startup.header"
+        },
+        {
+            "name": "predictions",
+            "type": {
+                "type": "array",
+                "items": "com.startup.predict.GenericPrediction"
+            },
+            "doc": "predictions associated with a single call to an inferencer."
+        }
+    ]
+}

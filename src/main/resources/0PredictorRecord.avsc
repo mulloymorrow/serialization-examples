@@ -1,0 +1,30 @@
+{
+    "type": "record",
+    "name": "com.startup.predict.Predictor",
+    "doc": "Preditor name and version",
+    "fields": [
+        {
+            "name": "predictionConcept",
+            "type": "string",
+            "doc": "Concept or target being predicted, e.g. Query classifier, objecy_category, price. Should be unique. Maybe should be an enum"
+        },
+        {
+            "name": "variant",
+            "type": [
+                "null",
+                "int"
+            ],
+            "doc": "Variant of predictor, used in A/B/n testing. Value null when no variant."
+        },
+        {
+            "name": "version",
+            "type": "string",
+            "doc": "unique version of the predictor, X.Y.Z = major_version.minor_version.build_number"
+        },
+        {
+            "name": "trainingTimestamp",
+            "type": "string",
+            "doc": "Training Timestamp of Predictor in ISO-8601 UTC format. Example: 2015-12-04T21:04:22Z"
+        }
+    ]
+}

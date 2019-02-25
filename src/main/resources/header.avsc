@@ -1,0 +1,93 @@
+{
+    "type": "record",
+    "name": "com.startup.header",
+    "doc": "Shared header for all events",
+    "fields": [
+        {
+            "name": "event_name",
+            "type": "string",
+            "doc": "Unique event name. Example: ObjectPraisedEvent"
+        },
+        {
+            "name": "user_id",
+            "type": [
+                "null",
+                "long"
+            ],
+            "doc": "User's unique id"
+        },
+        {
+            "name": "unique_id",
+            "type": "string",
+            "doc": "UUID for this particular event in hex format. Example: 56f180620ca141b88f5365a48725cf40"
+        },
+        {
+            "name": "timestamp",
+            "type": "string",
+            "doc": "Timestamp of event in ISO-8601 UTC format. Example: 2015-12-04T21:04:22Z"
+        },
+        {
+            "name": "origin",
+            "type": {
+                "type": "enum",
+                "name": "origins",
+                "symbols": [
+                    "backend",
+                    "iphone",
+                    "android",
+                    "web_desktop",
+                    "web_mobile",
+                    "web_app",
+                    "unknown",
+                    "rules_engine"
+                ]
+            },
+            "doc": "Where did this event originate from"
+        },
+        {
+            "name": "device_id",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "Device ID."
+        },
+        {
+            "name": "user_agent",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "User agent of browser making request if applicable, null otherwise"
+        },
+        {
+            "name": "app_version",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "Version of Startup app from which this event was generated"
+        },
+        {
+            "name": "ip_address",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "IP address from which this event originated."
+        },
+        {
+            "name": "device_location",
+            "type": [
+                "null",
+                "com.startup.location"
+            ],
+            "default": null,
+            "doc": "Location of device originating event"
+        }
+    ]
+}
