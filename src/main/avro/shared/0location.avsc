@@ -1,0 +1,42 @@
+{
+    "type": "record",
+    "name": "com.bootstrap.Location",
+    "doc": "Shared location record format for all events & location types",
+    "fields": [
+        {
+            "name": "longitude",
+            "type": "float"
+        },
+        {
+            "name": "latitude",
+            "type": "float"
+        },
+        {
+            "name": "accuracy",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "Accuracy of location point"
+        },
+        {
+            "name": "source",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "Measurement source i.e. GPS, IP address, zipcode"
+        },
+        {
+            "name": "location_name",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null,
+            "doc": "Conventional local name, i.e. Seattle, WA"
+        }
+    ]
+}
